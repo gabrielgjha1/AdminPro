@@ -15,27 +15,29 @@ import { SidebarComponent } from './opciones/sidebar/sidebar.component';
 import { BradpanComponent } from './opciones/bradpan/bradpan.component';
 import { PaginaComponent } from './pagina/pagina.component';
 import { RegistroComponent } from './login/registro.component';
-
+import { PaginasModulo } from './pagina/pagina.module';
+PaginasModulo
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     NopaginaComponent,
-    DashboardComponent,
-    ProgresoComponent,
-    Graficas1Component,
-    HeaderComponent,
-    SidebarComponent,
-    BradpanComponent,
-    PaginaComponent,
+   // DashboardComponent,
+   // ProgresoComponent,
+   // Graficas1Component,
+   // HeaderComponent,
+   // SidebarComponent,
+   // BradpanComponent,
+    //PaginaComponent,
     RegistroComponent
     
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    routing
+    routing,
+    PaginasModulo
   ],
   providers: [
     appRoutingProviders,
