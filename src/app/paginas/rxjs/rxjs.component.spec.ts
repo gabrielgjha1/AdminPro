@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PaginaComponent } from './pagina.component';
+import { RxjsComponent } from './rxjs.component';
 
-describe('PaginaComponent', () => {
-  let component: PaginaComponent;
-  let fixture: ComponentFixture<PaginaComponent>;
+describe('RxjsComponent', () => {
+  let component: RxjsComponent;
+  let fixture: ComponentFixture<RxjsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PaginaComponent ]
+      declarations: [ RxjsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PaginaComponent);
+    fixture = TestBed.createComponent(RxjsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

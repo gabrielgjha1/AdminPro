@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+declare function init_plugins();
 @Component({
   selector: 'app-pagina',
   templateUrl: './pagina.component.html',
@@ -9,7 +9,8 @@ export class PaginaComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    init_plugins();
   }
 
 }

@@ -1,1 +1,34 @@
-<p>graficas1 works!</p>
+<div class="row">
+  <div class="col-6">
+    <div class="card">
+      <div class="card-body">
+        <div>
+          <div class="card-title">{{graficos.grafico1.leyenda}}</div>
+        <app-componente-grafica [label]="graficos.grafico1.labels" [datos]="graficos.grafico1.data" [tipo]="graficos.grafico1.type" ></app-componente-grafica>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-6">
+    <div class="card">
+      <div class="card-body">
+        <div class="card-title">{{graficos.grafico2.leyenda}}</div>
+        <app-componente-grafica [label]="graficos.grafico2.labels" [datos]="graficos.grafico2.data" [tipo]="graficos.grafico2.type"></app-componente-grafica>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+<div class="card-title">{{graficos.grafico3.leyenda}}</div>
+        <app-componente-grafica [label]="graficos.grafico3.labels" [datos]="graficos.grafico3.data" [tipo]="graficos.grafico3.type"></app-componente-grafica>
+      </div>
+    </div>
+  </div>
+
+  
+
+</div>

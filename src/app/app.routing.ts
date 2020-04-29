@@ -13,17 +13,7 @@ import { BradpanComponent } from './opciones/bradpan/bradpan.component';
 import { PaginaComponent } from './pagina/pagina.component';
 import { RegistroComponent } from './login/registro.component';
 const routes: Routes = [
-    {
-         path: '', component: PaginaComponent,
-         children: [ 
-         { path: 'progreso', component: ProgresoComponent },
-         { path: 'dashboard', component: DashboardComponent },
-         { path: 'graficas1', component: Graficas1Component },
-         {path:'',redirectTo:'/dashboard',pathMatch:'full'}
-        
-        ]
-
-},//ruta por defecto
+//ruta por defecto
     { path: 'login', component: LoginComponent },
     { path: 'registro', component: RegistroComponent },
     { path: '**', component: NopaginaComponent }//ruta por si esta mal escrita.
