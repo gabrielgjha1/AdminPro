@@ -13,6 +13,10 @@ import { ConfigComponent } from './config/config.component';
 import { RouterModule } from '@angular/router';
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from '../paginas/rxjs/rxjs.component';
+import { PipesModule } from '../pipes/pipes.module';
+import { PerfilComponent } from './perfil/perfil.component';
+
+
 
 
 @NgModule(
@@ -26,7 +30,8 @@ import { RxjsComponent } from '../paginas/rxjs/rxjs.component';
             ComponenteGraficaComponent,
             ConfigComponent,
             PromesasComponent,
-            RxjsComponent
+            RxjsComponent,
+            PerfilComponent
     
 
 
@@ -44,7 +49,11 @@ import { RxjsComponent } from '../paginas/rxjs/rxjs.component';
             PaginasRutas,
             FormsModule,
             ChartsModule,
-            RouterModule
+            RouterModule,
+            PipesModule
+         
+         
+            
         ]
     })
 

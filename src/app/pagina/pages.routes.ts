@@ -7,6 +7,7 @@ import { ConfigComponent } from './config/config.component';
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from '../paginas/rxjs/rxjs.component';
 import {LoginGuardGuard} from "../servicios/servicios.index";
+import { PerfilComponent } from './perfil/perfil.component';
 
 const routes: Routes = [
     {
@@ -19,6 +20,7 @@ const routes: Routes = [
          { path: 'configuracion', component: ConfigComponent },
          { path: 'Promesas', component: PromesasComponent },
          { path: 'RxJs', component: RxjsComponent },
+         { path: 'Perfil', component: PerfilComponent },
          {path:'',redirectTo:'/dashboard',pathMatch:'full'}
         
         ]
