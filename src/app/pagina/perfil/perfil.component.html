@@ -20,7 +20,7 @@
                         </div>
                     </div>
                    
-                    <button type="submit" class="btn btn-block btn-success waves-effect waves-light m-r-10">
+                    <button (click)="cambiarImagen()" [disabled]="!imagenSubir"  type="submit" class="btn btn-block btn-success waves-effect waves-light m-r-10">
                         <i class="fa fa-save" > </i>   Enviar</button>
                     
                 </form>
@@ -36,9 +36,9 @@
 
                 <img src="" class="mt-2" alt="">
 
-                <input type="file" name="" id="">
+                <input (change)="seleccionImage($event.target.files[0])"  type="file" name="" id="">
                 
-                <button type="submit" class="btn btn-block btn-success waves-effect waves-light m-r-10 d-block mt-4 ">actualizar foto</button>
+                <button (click)="cambiarImagen()" type="submit" class="btn btn-block btn-success waves-effect waves-light m-r-10 d-block mt-4 ">actualizar foto</button>
 
 
             </div>

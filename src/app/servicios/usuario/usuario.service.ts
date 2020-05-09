@@ -7,6 +7,8 @@ import {URL_SERVICIOS} from '../../configuracion/config'
 import Swal from 'sweetalert2'
 
 import 'rxjs/Rx' ;
+import { SubirService } from '../subir-archivo/subir.service';
+import { Router } from '@angular/router';
 
 
 
@@ -17,9 +19,10 @@ export class UsuarioService {
   usuario:Usuario;
   token:string;
   constructor(
-    
+    private router:Router,
+    public _SubirService: SubirService,
     private http: HttpClient
-  ) { this.cargarStorage(); }
+  ) { this.cargarStorage();}
    
   // Guardar los datos del usuario en el store
   guardarStorage(id:string,token:string,usuario:Usuario){
@@ -114,6 +117,24 @@ export class UsuarioService {
 
             });
 
+
+  }
+  
+  cambiarImagen (archivo:File,id:string){
+
+    this._SubirService.subirArchivo(archivo,'usuarios',id)
+      
+        .then((resp:any)=>{
+          console.log(resp);
+          this.usuario.img=resp.usuario.img;
+          Swal.fire('Usuario actualizado',resp.usuario.nombre,'success');
+          this.guardarStorage(id,this.token,this.usuario)
+        })
+        /*
+        .cath(resp=>{
+          console.log(resp);
+        });
+        */
 
   }
 
