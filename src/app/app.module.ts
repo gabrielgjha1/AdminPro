@@ -14,7 +14,7 @@ import {ConfigServices} from './servicios/configuracion/config.service';
 import {ServiciosModule} from './servicios/servicios.module';
 
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
-
+import { AdminGuard } from './servicios/guards/admin.guard';
 
 
 
@@ -25,7 +25,7 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
     LoginComponent,
     NopaginaComponent,
     RegistroComponent,
-  
+    
 
   
 

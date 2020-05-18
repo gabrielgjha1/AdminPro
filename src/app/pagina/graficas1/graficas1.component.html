@@ -1,34 +1,169 @@
-<div class="row">
-  <div class="col-6">
+<div class="row animated fadeIn">
+  <div class="col-12">
+
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Agregar Grafica</h5>
+        <div class=" " >
+          <button class="btn btn-success mr-3 "  (click)="AgregarGragica('2')" >  Agregar grafica (2) </button>
+          <button class="btn btn-success mr-3 " (click)="AgregarGragica('3')" >  Agregar grafica (3) </button>
+          <button class="btn btn-success mr-3" (click)="AgregarGragica('4')" >  Agregar grafica (4) </button>
+        </div>
+       
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="row animated fadeIn" *ngIf="mostrarGrafica" >
+  <div class="col-12">
+
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Agregar Grafica</h5>
+        <form [formGroup]="forma" id="form"  (ngSubmit)="AairGrafica()" >
+          
+        
+          <div class="row">
+
+    
+            <div class="col-6">
+            
+
+            
+          <div class="form-group">
+            <label for="exampleInputEmail1"> Ingrese nombre de la variable  </label>
+            <input formControlName="labels" type="text" required class="form-control" name="labels" id="labels"  placeholder="Ingrese Variable">
+          </div>
+
+            </div>
+          
+            <div class="col-4">
+
+              <div class="form-group">
+                <label for="exampleInputPassword1">Ingrese valor de la variable </label>
+                <input formControlName="data" type="number" required class="form-control" name="data" id="data" placeholder="Ingresa Cantidad">
+              </div>
+
+            </div>
+          </div>
+
+          <div  class="row">
+
+       
+            <div class="col-6">
+              
+              <div class="form-group">
+                <label for="exampleInputEmail1">   Ingrese nombre de la variable  </label>
+                <input type="text" formControlName="labels2"  class="form-control" name="labels2" id="labels2"  placeholder="Ingrese Variable">
+              </div>
+
+            </div>
+
+         
+            <div  class="col-6">
+
+              <div class="form-group">
+                <label for="exampleInputPassword1">Ingrese valor de la variable <</label>
+                <input type="number" formControlName="data2"  class="form-control" name="data2" id="data2" placeholder="Ingresa Cantidad">
+              </div>
+            </div>
+       
+          </div>
+
+          <div *ngIf="grafica3" class="row">
+
+            <div class="col-6">
+              <div class="form-group">
+                <label for="exampleInputEmail1">  Ingrese nombre de la variable   </label>
+                <input type="text" formControlName="labels3"  class="form-control" name="labels3" id="labels3"  placeholder="Ingrese Variable">
+              </div>
+
+            </div>
+        
+
+        
+            <div class="col-6">
+              
+                        <div class="form-group">
+                          <label for="exampleInputPassword1">Ingrese valor de la variable </label>
+                          <input type="number" formControlName="data3"  class="form-control" name="data3" id="data3" placeholder="Ingresa Cantidad">
+                        </div>
+                        
+            </div>
+      
+          </div>
+
+          <div *ngIf="grafica4" class="row">
+
+            <div class="col-6">
+              <div class="form-group">
+                <label for="exampleInputEmail1">  Ingrese nombre de la variable   </label>
+                <input type="text" formControlName="labels4"  class="form-control" name="labels4" id="labels4"  placeholder="Ingrese Variable">
+              </div>
+
+            </div>
+        
+
+        
+            <div class="col-6">
+              
+                        <div class="form-group">
+                          <label for="exampleInputPassword1">Ingrese valor de la variable </label>
+                          <input type="number" formControlName="data4"  class="form-control" name="data4" id="data4" placeholder="Ingresa Cantidad">
+                        </div>
+                        
+            </div>
+      
+          </div>
+
+          <div class="row">
+
+            <div class="col-12">
+
+
+              <div class="form-group">
+                <label for="exampleInputPassword1">Ingrese nombre de la grafica </label>
+                <input type="text" required class="form-control" formControlName="leyenda" name="leyenda" id="leyenda" placeholder="Ingresa Cantidad">
+              </div>
+
+              <div class="form-group">
+                <label for="exampleInputPassword1">Tipo de grafica </label>
+                <input type="text" disabled value="doughnut" formControlName="type" class="form-control" name="type" id="type">
+              </div>
+
+
+            </div>
+
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div >
+
+
+<div class="row" >
+  <div *ngFor="let grafica of graficas" class="col-6">
     <div class="card">
       <div class="card-body">
         <div>
-          <div class="card-title">{{graficos.grafico1.leyenda}}</div>
-        <app-componente-grafica [label]="graficos.grafico1.labels" [datos]="graficos.grafico1.data" [tipo]="graficos.grafico1.type" ></app-componente-grafica>
-
+          <div class="card-title">{{grafica.leyenda}}</div>
+        <app-componente-grafica [label]="grafica.labels" [datos]="grafica.data" [tipo]="grafica.type" ></app-componente-grafica>
+          <button (click)="EliminarGrafica(grafica._id)" class="btn btn-circle btn-danger" ><i class="fa fa-trash-o" ></i>  </button>
         </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-6">
-    <div class="card">
-      <div class="card-body">
-        <div class="card-title">{{graficos.grafico2.leyenda}}</div>
-        <app-componente-grafica [label]="graficos.grafico2.labels" [datos]="graficos.grafico2.data" [tipo]="graficos.grafico2.type"></app-componente-grafica>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-12">
-    <div class="card">
-      <div class="card-body">
-<div class="card-title">{{graficos.grafico3.leyenda}}</div>
-        <app-componente-grafica [label]="graficos.grafico3.labels" [datos]="graficos.grafico3.data" [tipo]="graficos.grafico3.type"></app-componente-grafica>
       </div>
     </div>
   </div>
 
   
 
+</div>
 </div>

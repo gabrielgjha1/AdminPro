@@ -1,0 +1,58 @@
+<div class="row d-flex justify-content-center animated fadeIn">
+    <div class="col-12 col-md-8 ">
+        
+        <div class="card animated fadeIn">
+            <div class="card-body">
+                <h5  class="card-title">Buscar</h5>
+                <div class="input-group">
+                    <div class="input-group-addon"><i class="ti-search"></i></div>
+                    <input #input (keyup)="BuscarHospital(input.value)" type="text"  name="buscar" class="form-control" id="nombre" placeholder="Nombre">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-12  animated fadeIn">
+        <div class=" mb-3 d-flex justify-content-between align-items-xl-center  " >
+
+            <p class="text-center"  > Hospitales registrados <strong>{{registrados}}</strong> </p>
+            <button (click)="GuardarHospital()"  class=" btn btn-success"  >Agregar hospital</button>
+          
+        </div>
+          <table class="table">
+            <thead class="bg-primary">
+              <tr class="text-white" >
+                <th class=" text-center "  scope="col ">Nombre  </th>
+                <th scope="col">Registrado por:</th>
+                <th scope="col">Email: </th>
+                <th class=" d-flex justify-content-center " scope="col ">Editar</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let hospital of Hospital" >
+                <td> <input #nombre value="{{ hospital.nombre }}" disabled  class="form-control" type="text" name="nombre" id="nombre"> </td>
+                <td>{{ hospital.usuario.nombre }}</td>
+                <td>{{ hospital.usuario.email }}</td>
+                <td>
+                    
+                    <div class="d-flex d-flex justify-content-center">
+                        <button (click)="EliminarUSuario(hospital._id)"  class="btn btn-danger mr-2"> <i class="fa fa-trash-o" ></i>  </button>
+                        <button (click)="Actualizar(hospital._id,nombre.value)" class="btn btn-primary mr-2"> <i class="fa fa-save" ></i>  </button>
+                        <button  (click)=" prueba(nombre,hospital._id)" class="btn btn-primary  "> <i class="fa fa-pencil-square-o" aria-hidden="true"></i>  </button>
+                    </div>
+           
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+    </div>
+
+    <div class="col-12">
+        <button (click)="CambiarPagina(-5)"  class=" btn btn-primary mr-5" >Anterior </button>
+        <button  (click)="CambiarPagina(5)" class=" btn btn-primary " >Siguiente  </button>
+    </div>
+
+
+</div>

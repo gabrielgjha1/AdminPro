@@ -83,7 +83,7 @@ export class RegistroComponent implements OnInit {
       this.forma.value.password
 
     );
-
+    console.log(usuario)
     //SIrve para crear un usuario, se llama al servicio se envia nuestro usuario lleno y si todo salee bien se realiza el suscribe
     this._UsuarioService.crearUsuario(usuario)
           .subscribe(resp=>{

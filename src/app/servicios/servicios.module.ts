@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import {ConfigServices,SidebarService,SharedService,
-        UsuarioService,LoginGuardGuard,SubirService } from './servicios.index'
+        UsuarioService,LoginGuardGuard,SubirService,HospitalService,GraficasService,MedicosService,
+        AdminGuard } from './servicios.index'
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -12,7 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule
 
   ],
-  providers:[ ConfigServices,SidebarService,SharedService,LoginGuardGuard,UsuarioService,SubirService
+  providers:[ MedicosService,HospitalService,ConfigServices,SidebarService,SharedService,LoginGuardGuard,UsuarioService,SubirService,GraficasService,
+    AdminGuard
     
   ]
 })

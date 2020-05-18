@@ -5,7 +5,7 @@ import { Graficas1Component } from './graficas1/graficas1.component';
 import { PaginaComponent } from './pagina.component';
 import { opciones } from '../opciones/opciones.module';
 import { PaginasRutas } from './pages.routes';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProgresoComponents } from '../componente/progreso/progreso.component';
 import { ChartsModule } from 'ng2-charts'
 import { ComponenteGraficaComponent } from '../componente/componente-grafica/componente-grafica.component';
@@ -15,8 +15,13 @@ import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from '../paginas/rxjs/rxjs.component';
 import { PipesModule } from '../pipes/pipes.module';
 import { PerfilComponent } from './perfil/perfil.component';
+import { UsuarioComponent } from './usuario/usuario.component';
+import { BrowserModule } from '@angular/platform-browser';
 
-
+import { CommonModule } from '@angular/common';
+import { HospitalesComponent } from './hospitales/hospitales.component';
+import { MedicosComponent } from './medicos/medicos/medicos.component';
+import { MedicoComponent } from './medico/medico/medico.component';
 
 
 @NgModule(
@@ -31,7 +36,12 @@ import { PerfilComponent } from './perfil/perfil.component';
             ConfigComponent,
             PromesasComponent,
             RxjsComponent,
-            PerfilComponent
+            PerfilComponent,
+            UsuarioComponent,
+            HospitalesComponent,
+            MedicosComponent,
+            MedicoComponent,
+        
     
 
 
@@ -50,7 +60,10 @@ import { PerfilComponent } from './perfil/perfil.component';
             FormsModule,
             ChartsModule,
             RouterModule,
-            PipesModule
+            PipesModule,
+            BrowserModule,
+            CommonModule,
+            ReactiveFormsModule
          
          
             

@@ -1,0 +1,50 @@
+<div class="row  d-flex justify-content-center">
+    <div   class=" col-6">
+
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Buscar</h5>
+                <input type="text" class="form-control" placeholder="Buscar medicos"  routerLinkActive="router-link-active"    name="buscar" id="buscar">
+            </div>
+        </div>
+
+    </div>    
+</div>    
+
+
+<div class="row animated fadeIn  ">
+    <div class="col-12 ">
+        <div class="card ">
+            <div class="card-body">
+              <div class="d-flex justify-content-between  align-content-center mb-3  " >
+                <h5 class="card-title">Registros de Medicos</h5>
+                <button class="btn btn-success" [routerLink]="['/medico','nuevo']" > Agregar Hospital </button>
+              </div>
+                <table class="table table-sm">
+                    <thead>
+                      <tr class="bg-primary text-white "  >
+                        <th class="text-center" scope="col ">Nombre</th>
+                        <th class="text-center" scope="col">Registrado Por:</th>
+                        <th class="text-center" scope="col">Hospitales Asignado</th>
+                        <th class="text-center" scope="col">Editar</th>
+                      </tr>
+                    </thead>
+                    <tbody >
+                      <tr *ngFor="let medicos of medicos" >
+                        <th class="text-center" scope="row">{{medicos.nombre}}</th>
+                        <td class="text-center"  >{{medicos.usuario.nombre}}</td>
+                        <td class="text-center" >{{medicos.hospital.nombre}}</td>
+                        <td class="text-center" >
+                          <button (click)="EliminarUsuarios(medicos._id)"  class="btn btn-danger mr-2"> <i class="fa fa-trash-o" ></i>  </button>
+                          <button [routerLink]="['/medico',medicos._id]" routerLinkActive="router-link-active"  class="btn btn-primary  "> <i class="fa fa-pencil-square-o" aria-hidden="true"></i>  </button>
+                        </td>
+
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-primary mr-3" (click)="CambiarPag(-5)" >  Anterior  </button>
+    <button class="btn btn-primary" (click)="CambiarPag(+5)" >  Siguiente  </button>
+</div>

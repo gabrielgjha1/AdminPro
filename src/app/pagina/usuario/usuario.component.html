@@ -1,0 +1,72 @@
+<div class="row animated fadeIn">
+    
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <input #input (keyup)="BuscarDatos(input.value)"  type="text" class="form-control" placeholder="Buscar Usuario" name="" id="">
+            </div>
+        </div>
+        
+    </div>
+
+</div>
+
+<div *ngIf="cargar==true" class="row animated fadeIn">
+    <div class="col-12 alert-warning text-center pt-3 pb-3 ">
+        <strong  >Cargando</strong>
+        <i class="fa fa-refresh fa-spin fa-2x" ></i>
+        <span>Espere porfavor</span>
+    
+    </div>
+
+</div>
+<div class="row  animated fadeIn">
+    <div class="col-12 ">
+
+        <div class="card">
+            <div class="card-body">
+                <p class="card-text d-flex justify-content-center">Cantidad de usuarios registrados:  <strong> {{registros}} </strong>  </p>
+                <table class="table table-hover  table-borderless table-sm">
+                    <thead>
+                      <tr>
+        
+                        <th scope="col">Correo</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Rol</th>
+                        
+                        <th scope="col">Editar</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+
+                      <tr *ngFor="let usuario of usuarios" >
+            
+                        <td>{{usuario.nombre}}</td>
+                        <td>{{usuario.email}}</td>
+                        <td><select [(ngModel)]="usuario.role" class="form-control" name="role" id="role" >
+                            <option value="ADMIN_ROLE">ADMIN_ROLE</option>
+                            <option value="USER_ROLE">USER_ROLE</option>
+                        </select>
+                            
+                            </td>
+                    
+                        <td>
+                            <button (click)=(ActualizarRol(usuario)) class="btn btn-primary mr-2 "> <i class="fa fa-save" ></i>  </button>
+                            <button (click)=(EliminarUsuario(usuario._id)) class="btn btn-danger"> <i class="fa fa-trash-o" ></i>  </button>
+                        </td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                  <div class="row ">
+                      <div class="col-12 d-flex justify-content-center">
+                          <button (click)="Paginacion(-5)" class="btn btn-success mr-3 " ngsub >Anterior</button>
+                          <button  (click)="Paginacion(5)" class="btn btn-success " >Siguiente</button>
+                      </div>
+                  </div>
+            </div>
+        </div> 
+        
+    </div>
+</div>
+

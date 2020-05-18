@@ -10,11 +10,13 @@ export class SidebarComponent implements OnInit {
    
   constructor(public _sidebarservice:SidebarService,
               public _UsuarioService:UsuarioService) { 
-    console.log()
   }
 
 
   ngOnInit(): void {
+
+    this._sidebarservice.TraerMenu();
+  
   }
 
 }

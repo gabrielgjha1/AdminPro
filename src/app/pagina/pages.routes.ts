@@ -6,9 +6,14 @@ import { Graficas1Component } from './graficas1/graficas1.component';
 import { ConfigComponent } from './config/config.component';
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from '../paginas/rxjs/rxjs.component';
-import {LoginGuardGuard} from "../servicios/servicios.index";
+import {LoginGuardGuard, AdminGuard} from "../servicios/servicios.index";
 import { PerfilComponent } from './perfil/perfil.component';
+import { UsuarioComponent } from './usuario/usuario.component';
+import { HospitalesComponent } from './hospitales/hospitales.component';
+import { MedicosComponent } from './medicos/medicos/medicos.component';
+import { MedicoComponent } from './medico/medico/medico.component';
 
+UsuarioComponent
 const routes: Routes = [
     {
          path: '', component: PaginaComponent,
@@ -21,6 +26,13 @@ const routes: Routes = [
          { path: 'Promesas', component: PromesasComponent },
          { path: 'RxJs', component: RxjsComponent },
          { path: 'Perfil', component: PerfilComponent },
+         //mantenimientoHospitalesComponent
+         { path: 'usuarios', component: UsuarioComponent,canActivate:[AdminGuard]},
+         { path: 'hospitales', component: HospitalesComponent },
+         { path: 'medicos', component: MedicosComponent },
+         { path: 'medico/:id', component: MedicoComponent },
+
+         
          {path:'',redirectTo:'/dashboard',pathMatch:'full'}
         
         ]

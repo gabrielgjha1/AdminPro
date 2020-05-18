@@ -1,0 +1,58 @@
+<div class="row animated fadeIn">
+    <div class="col">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Editar medico</h5>
+                
+                <form ngNativeValidate #f="ngForm" (ngSubmit)="guardarMedico(f)">
+                    
+                    <div class="row mb-5">
+
+                        <div class="col-12">
+                            <label for="medico">Nombre del medico</label>
+                           <input type="text" [value]="nombre" required class="form-control" name="medico" ngModel id=""> 
+                        </div>
+
+                    </div>
+                    
+
+                    <div class="row mb-5">
+                        <div class="col ">
+
+                            <div class="form-group ">
+                                <label for="hospital">Hospitales</label>
+
+                                <select *ngIf="comprobar==false" (change)=prueba($event)  id="hospital" class="form-control"  name="hospital" ngModel >
+                                   
+                                    <option value="">{{hospitalmedico}}</option>
+                               
+                                    <option   [value]="" >  Cambiar Hospital</option>
+                              
+                            </select>
+                            
+                                <select *ngIf="comprobar" id="hospital" class="form-control"  name="hospital" ngModel >
+                                   
+                                        <option value="">Selecciona un hospital</option>
+                                   
+                                        <option   [value]="hopitale._id" *ngFor="let hopitale of hopitales" >{{hopitale.nombre}}</option>
+                                  
+                                </select>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="row mb-5 ">
+                        <div class="col ">
+                            <button type="submit" class="btn btn-primary mr-3 btn-block"> <i class="fa fa-save" ></i> Guardar </button>
+                            <button  type="submit" class="btn btn-dark  btn-block"> Cancelar </button>
+                        </div>
+                    </div>
+
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
